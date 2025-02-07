@@ -5,6 +5,7 @@ import { AppContainer } from './App.styles'
 import { getBalancesheetData } from './fetch'
 import { ClimbingBoxLoader } from 'react-spinners'
 import Box from './components/box/Box.component'
+import Swal from 'react-sweetalert2'
 
 const App = () => {
   const [loading, setLoading] = useState(true)
@@ -32,10 +33,21 @@ const App = () => {
       </Box>
     )
 
-    if (error) return <p>{error}</p>
+  if (error)
+    return (
+      <Swal
+        show={true}
+        icon='error'
+        title='Oops...'
+        text='Something went wrong!'
+        confirmButtonText='Reload'
+        onConfirm={() => {
+          window.location.reload()
+        }}
+      />
+    )
 
   return (
-
     <AppContainer>
       <Balancesheet balanceSheet={balanceSheet} />
     </AppContainer>

@@ -25,11 +25,11 @@ describe('App', () => {
 
     it('should render loading state', () => {
         render(<App />)
-        expect(screen.getByText('Loading...')).toBeInTheDocument()
+        expect(screen.getByTestId('loader')).toBeInTheDocument()
     })
 
     it('renders error message on fetch failure', async () => {
-        const mockError = 'Failed to fetch data'
+        const mockError = 'Something went wrong!'
     
         ;(getBalancesheetData as jest.Mock).mockImplementation(({ onFailure }) => {
           onFailure(mockError)
