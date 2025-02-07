@@ -5,7 +5,7 @@ describe('TableContainer', () => {
     it('renders correctly with required props', () => {
         const { getByTestId } = render(
             <TableContainer id='test-table' columnCount={3}>
-                <div>Child</div>
+                <tbody><tr><th>Child</th></tr></tbody>
             </TableContainer>
         )
         const tableElement = getByTestId('test-table')
@@ -15,7 +15,7 @@ describe('TableContainer', () => {
     it('applies the className correctly', () => {
         const { getByTestId } = render(
             <TableContainer id='test-table' columnCount={3} className="custom-class">
-                <div>Child</div>
+                <tbody><tr><th>Child</th></tr></tbody>
             </TableContainer>
         )
         const tableElement = getByTestId('test-table')
@@ -25,7 +25,7 @@ describe('TableContainer', () => {
     it('renders children correctly', () => {
         const { getByText } = render(
             <TableContainer id='test-table' columnCount={3}>
-                <div>Child</div>
+                <tbody><tr><th>Child</th></tr></tbody>
             </TableContainer>
         )
         const childElement = getByText('Child')
