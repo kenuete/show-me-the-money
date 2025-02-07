@@ -3,6 +3,10 @@ import styled from 'styled-components'
 export const TableLayout = styled.table`
   display: grid;
   font-size: 16px;
+  margin-top: 10px;
+  padding-top: 5px;
+  border-radius: 10px;
+  box-shadow: #00000059 0px 5px 15px;
 `
 
 interface RowLayoutProps {
@@ -22,7 +26,7 @@ export const RowLayout = styled.tr.withConfig({
     1fr
   );
   gap: ${(props: RowLayoutProps) => props.gap};
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #00000020;
   min-height: 44px;
   font-weight: ${(props: RowLayoutProps) =>
     props.isHeading ? 'bold' : 'normal'};

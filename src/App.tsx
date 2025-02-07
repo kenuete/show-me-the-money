@@ -1,18 +1,30 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { BalanceSheet } from './types/Balancesheet'
 import Balancesheet from './components/balancesheet/Balancesheet.component'
-import { URL } from './config/config'
 import { AppContainer } from './App.styles'
+import { getBalancesheetData } from './fetch'
 
 const App = () => {
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
   const [balanceSheet, setBalanceSheet] = useState<BalanceSheet>([])
 
-  useEffect(() => {
-    fetch(URL)
-      .then((res) => res.json())
-      .then((data) => setBalanceSheet(data.Reports))
+  const onSuccess = useCallback((data: BalanceSheet) => {
+    setBalanceSheet(data)
+    setLoading(false)
   }, [])
-  if (!balanceSheet.length) return <h1>Loading...</h1>
+
+  const onFailure = useCallback((error: string) => {
+    setError(error)
+    setLoading(false)
+  }, [])
+
+  useEffect(() => {
+    getBalancesheetData({ onSuccess, onFailure })
+  }, [onSuccess, onFailure])
+
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>{error}</p>
 
   return (
     <AppContainer>
