@@ -21,7 +21,7 @@ export const getBalancesheetData = async ({
     onSuccess(data.Reports)
   } catch (error) {
     if (error instanceof Error) {
-      onFailure(error.message)
+      onFailure('Something went wrong!')
       console.error(error.message)
     } else {
       onFailure('An unknown error occurred')
