@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const TableLayout = styled.table`
   display: grid;
   font-size: 16px;
-  border-top: 1px solid black;
 `
 
 interface RowLayoutProps {
@@ -43,4 +42,7 @@ export const ColumnStyle = styled.td.withConfig({
   margin-left: 10px;
   font-weight: ${(props: ColumnStyleProps) =>
     props.isHeading ? 'bold' : 'inherit'};
+`
+
+export const Thead = styled.thead`
 `

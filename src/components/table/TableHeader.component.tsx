@@ -1,12 +1,14 @@
+import { Thead } from './Table.styles'
+
 interface TableHeaderProps {
     children?: React.ReactNode
 }
 
 const TableHeader: React.FC<TableHeaderProps> = ({ children }) => {
     return (
-        <thead>
+        <Thead>
             {children}
-        </thead>
+        </Thead>
     )
 }
 

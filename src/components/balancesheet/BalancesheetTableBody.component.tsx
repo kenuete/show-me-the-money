@@ -16,16 +16,17 @@ const BalanceSheetTableBody: React.FC<BalanceSheetTableBodyProps> = ({
           {row.Title}
         </Column>
       </Row>
-      {row?.Rows?.map((sectionRow) => {
+      {row?.Rows?.map((sectionRow, index) => {
         return (
           <Row
             id={'balancesheet-data-row-section-row'}
             isHeading={sectionRow.RowType === 'SummaryRow'}
+            key={index}
           >
             <Column id={'empty-column'} />
-            {sectionRow?.Cells?.map((cell) => {
+            {sectionRow?.Cells?.map((cell, index) => {
               return (
-                <Column id={'balancesheet-data-column-section-cell'}>
+                <Column id={'balancesheet-data-column-section-cell'} key={index}>
                   {cell.Value}
                 </Column>
               )
