@@ -29,7 +29,7 @@ const App = () => {
   if (loading)
     return (
       <Box>
-        <ClimbingBoxLoader aria-label="Loading Spinner" data-testid="loader" />
+        <ClimbingBoxLoader aria-label='Loading Spinner' data-testid='loader' />
       </Box>
     )
 
