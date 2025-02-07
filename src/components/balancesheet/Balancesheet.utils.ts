@@ -1,9 +1,7 @@
 import { BalanceSheet, Row as Rowtype } from '../../types/Balancesheet'
 
 export const getReportHeaders = (balanceSheet: BalanceSheet) => {
-    console.log('balanceSheet', balanceSheet)
     const report = balanceSheet[0]
-    console.log('report', report)
     const {
       ReportName: reportName,
       ReportTitles: reportTitles,

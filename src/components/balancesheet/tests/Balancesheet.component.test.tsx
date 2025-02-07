@@ -5,7 +5,6 @@ import mockBalanceSheet from './balancesheet.mock.data'
 describe('Balancesheet component', () => {
   it('displays report titles', () => {
     render(<Balancesheet balanceSheet={mockBalanceSheet.Reports} />)
-    screen.debug()
     expect(
       screen.getByText(/Balance Sheet, Demo Org, As at 06 February 2025/i)
     ).toBeInTheDocument()
