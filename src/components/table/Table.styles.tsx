@@ -4,7 +4,6 @@ export const TableLayout = styled.table`
   display: grid;
   font-size: 16px;
   margin-top: 10px;
-  padding-top: 5px;
   border-radius: 10px;
   box-shadow: #00000059 0px 5px 15px;
 `
@@ -49,4 +48,8 @@ export const ColumnStyle = styled.td.withConfig({
 `
 
 export const Thead = styled.thead`
+    color: white;
+    background-color: #36304A;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 `
