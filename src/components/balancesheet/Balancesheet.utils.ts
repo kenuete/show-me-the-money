@@ -12,12 +12,8 @@ export const getReportHeaders = (balanceSheet: BalanceSheet) => {
   
 export const getReportDateRange = (row: Rowtype) => {
     const startDate = row?.Cells?.[1]?.Value ?? ''
-    const endDate = row?.Cells?.[2].Value ?? ''
+    const endDate = row?.Cells?.[2]?.Value ?? ''
     return { startDate, endDate }
-}
-
-export const getHeaderRow = (rows: Rowtype[]) => {
-    return rows.find((row) => row.RowType === 'Header')
 }
 
 export const getBodyRows = (rows: Rowtype[]) => {
