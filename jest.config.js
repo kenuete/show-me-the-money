@@ -9,4 +9,9 @@ export default {
     '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }],
   },
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '\\.styles\\.(js|ts|tsx)$', // Ignore any .styles.js/ts/tsx files
+    // Add more patterns as needed
+  ],  
 };
