@@ -12,7 +12,7 @@ interface RowProps {
 
 const Row: React.FC<RowProps> = ({ id, dataTestId, isHeading, className, children }) => {
     const { columnCount, gap } = useContext(TableContext) as TableContextProps
-
+    
     return (
         <RowLayout id={id} data-test-id={dataTestId} isHeading={isHeading} columnCount={columnCount} gap={gap} className={className}>
             {children}
