@@ -14,8 +14,7 @@ interface BalanceSheetProps {
 }
 
 const Balancesheet: React.FC<BalanceSheetProps> = ({ balanceSheet }) => {
-  const { reportTitles } =
-    getReportHeaders(balanceSheet)
+  const { reportTitles } = getReportHeaders(balanceSheet)
 
   const rows = balanceSheet[0].Rows
   const { startDate, endDate } = getReportDateRange(rows[0])
@@ -23,17 +22,15 @@ const Balancesheet: React.FC<BalanceSheetProps> = ({ balanceSheet }) => {
 
   return (
     <>
-      <Header>
+      <Header id='balancesheet-header' data-testid='balancesheet-header'>
         {reportTitles.join(', ')}
       </Header>
       <TableContainer id={'balancesheet-data-table'} columnCount={4}>
         <BalancesheetTableHeader startDate={startDate} endDate={endDate} />
         <TableBody>
-        {bodyRows.map((row, index) => {
-          return (            
-              <BalanceSheetTableBody key={index} row={row} />
-          )
-        })}
+          {bodyRows.map((row, index) => {
+            return <BalanceSheetTableBody key={index} row={row} />
+          })}
         </TableBody>
       </TableContainer>
     </>

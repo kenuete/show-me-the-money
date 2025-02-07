@@ -14,7 +14,7 @@ const Row: React.FC<RowProps> = ({ id, dataTestId, isHeading, className, childre
     const { columnCount, gap } = useContext(TableContext) as TableContextProps
 
     return (
-        <RowLayout id={id} data-test-id={dataTestId} isHeading={isHeading} columnCount={columnCount} gap={gap} className={className}>
+        <RowLayout id={id} data-testid={dataTestId || id} isHeading={isHeading} columnCount={columnCount} gap={gap} className={className}>
             {children}
         </RowLayout>
     )

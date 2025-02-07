@@ -10,7 +10,7 @@ interface ColumnProps {
 
 const Column: React.FC<ColumnProps> = ({ id, dataTestId, isHeading, className, children }) => {
     return (
-        <ColumnStyle id={id} data-test-id={dataTestId} isHeading={isHeading} className={className}>
+        <ColumnStyle id={id} data-testid={dataTestId || id} isHeading={isHeading} className={className}>
             {children}
         </ColumnStyle>
     )

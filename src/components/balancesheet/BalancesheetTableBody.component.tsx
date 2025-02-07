@@ -11,22 +11,22 @@ const BalanceSheetTableBody: React.FC<BalanceSheetTableBodyProps> = ({
 }) => {
   return (
     <>
-      <Row id={'balancesheet-data-row-section'}>
-        <Column id={'balancesheet-data-column-section-category'}>
+      <Row id={`balancesheet-data-title-row-section-${row.Title}`}>
+        <Column id={`balancesheet-data-title-section-category-${row.Title}`}>
           {row.Title}
         </Column>
       </Row>
       {row?.Rows?.map((sectionRow, index) => {
         return (
           <Row
-            id={'balancesheet-data-row-section-row'}
+            id={`balancesheet-data-row-section-${index}`}
             isHeading={sectionRow.RowType === 'SummaryRow'}
             key={index}
           >
             <Column id={'empty-column'} />
             {sectionRow?.Cells?.map((cell, index) => {
               return (
-                <Column id={'balancesheet-data-column-section-cell'} key={index}>
+                <Column id={`balancesheet-data-column-section-cell-${index}`} key={index}>
                   {cell.Value}
                 </Column>
               )

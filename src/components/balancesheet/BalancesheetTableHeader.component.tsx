@@ -20,10 +20,10 @@ const BalancesheetTableHeader: React.FC<BalancesheetTableHeaderProps> = ({
           Category
         </Column>
         <Column id={'balancesheet-data-column-header-account'}>Account</Column>
-        <Column id={'balancesheet-data-column-header-current'}>
+        <Column id={'balancesheet-data-column-header-report-startdate'}>
           {startDate}
         </Column>
-        <Column id={'balancesheet-data-column-header-comparison'}>
+        <Column id={'balancesheet-data-column-header-report-enddate'}>
           {endDate}
         </Column>
       </Row>

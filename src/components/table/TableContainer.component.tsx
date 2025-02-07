@@ -22,7 +22,7 @@ const TableContainer: React.FC<TableContainerProps> = ({
         <TableContext.Provider value={{ columnCount, gap }}>
             <TableLayout
                 id={id}
-                data-test-id={dataTestId || id}
+                data-testid={dataTestId || id}
                 className={className}
             >
                 {children}

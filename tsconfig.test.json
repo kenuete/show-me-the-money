@@ -1,0 +1,9 @@
+{
+    "extends": "./tsconfig.app.json",
+    "compilerOptions": {
+      "jsx": "react-jsx", // Ensure JSX is supported
+      "types": ["jest", "@testing-library/jest-dom"]
+    },
+    "include": ["src", "**/*.test.tsx", "**/*.test.ts"],
+    "exclude": ["node_modules"]
+  }
