@@ -1,13 +1,14 @@
 // server/middleware/errorHandler.ts
 
-import { Request, Response } from 'express'
+import { Request, Response, NextFunction } from 'express'
 import { ErrorWithStatusCode } from '../utils/ErrorWithStatusCode'
 
 function errorHandler(
   err: ErrorWithStatusCode, 
   _req: Request, 
   res: Response, 
-  // _nextFunction: NextFunction
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _nextFunction: NextFunction
 ) {
   console.error(err)  // Log the error
 

@@ -34,7 +34,7 @@ describe('getBalancesheetData', () => {
 
         await getBalancesheetData({ onSuccess, onFailure })
 
-        expect(onFailure).toHaveBeenCalledWith('Response status: 404')
+        expect(onFailure).toHaveBeenCalledWith('Something went wrong!')
         expect(onSuccess).not.toHaveBeenCalled()
     })
 
@@ -45,7 +45,7 @@ describe('getBalancesheetData', () => {
 
         await getBalancesheetData({ onSuccess, onFailure })
 
-        expect(onFailure).toHaveBeenCalledWith('Fetch error')
+        expect(onFailure).toHaveBeenCalledWith('Something went wrong!')
         expect(onSuccess).not.toHaveBeenCalled()
     })
 
