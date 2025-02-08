@@ -26,4 +26,7 @@ export interface Report {
   Rows: Row[]
 }
 
-export type BalanceSheet = Report[]
+export type BalanceSheet = {
+  Reports: Report[],
+  Status: string
+}
