@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api.xro": {
-        target: "http://localhost:3000",
+      '/api': {
+        target: 'http://localhost:5002',
         changeOrigin: true,
         secure: false,
       },
