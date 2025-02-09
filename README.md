@@ -1,55 +1,51 @@
-spin up the xero docker image
-docker run -p 3000:3000 995ad9c09444
+# Show Me The Money
 
-spin up the server
-yarn dev:server
+This solution can be run in two ways:  
+1. **Using Docker** (Recommended)  
+2. **Running everything independently**  
 
-spin up the client
-yarn dev
+## 🚀 Running with Docker  
+1. **Clone the repository**  
+   \`\`\`sh
+   git clone <repo-url>
+   cd <repo-name>
+   \`\`\`
+2. **Start all services using Docker Compose**  
+   \`\`\`sh
+   docker-compose up --build
+   \`\`\`
+3. **Open the application** in your browser:  
+   👉 [http://localhost:3001/](http://localhost:3001/)
 
-spin up the tests
-yarn test --coverage
+---
 
-docker-compose down
-docker-compose up --build
+## 🛠 Running Independently  
+Follow these steps if you prefer to run each service manually:
 
-build the backend image
-docker build -t showmethemoney-server -f dockerfile.backend .
+1. **Clone the repository**  
+   \`\`\`sh
+   git clone <repo-url>
+   cd <repo-name>
+   \`\`\`
 
-create the docker network
-docker network create mynetwork
+2. **Install dependencies**  
+   \`\`\`sh
+   yarn install
+   \`\`\`
 
-1. run the xero api in the network at 3000
-docker run -p 3000:3000 --network mynetwork --name xero-mock-container 995ad9c09444
+3. **Start the Xero mock API**  
+   \`\`\`sh
+   docker run -p 3000:3000 jaypeng2015/show-me-the-money
+   \`\`\`
 
-2. run the showmethemoney-server
-docker run -p 5001:5001 --network mynetwork --name showmethemoney-container showmethemoney-server
-docker run -p 5001:5001 --network mynetwork --name showmethemoney-container \
-  -e XERO_API_URL="http://xero-mock-container:3000/api.xro/2.0/Reports/BalanceSheet" \
-  showmethemoney-server
+4. **Start the backend server**  
+   \`\`\`sh
+   yarn dev:server
+   \`\`\`
 
-build the frontend image
-docker build -t showmethemoney-frontend -f dockerfile.frontend .
+5. **Start the frontend app**  
+   \`\`\`sh
+   yarn dev
+   \`\`\`
 
-run the frontend image
-docker run -p 3001:80 --network mynetwork --name showmethemoney-frontend-container showmethemoney-frontend
-
-
-
-Local Steps:
-1. Intall the dependencies
-yarn install
-
-2. Spin up the xero mock api
-docker run -p 3000:3000 jaypeng2015/show-me-the-money
-
-3. Spin up the local showmethemoney server
-yarn dev:server
-
-4. Spin up the frontend app using vite
-yarn dev
-
-Docker compose
-docker-compose up --build
-Open the app http://localhost:3001/
-
+Now, open [http://localhost:3001/](http://localhost:3001/) in your browser to use the app.
