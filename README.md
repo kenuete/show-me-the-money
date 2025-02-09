@@ -48,3 +48,8 @@ yarn dev:server
 
 4. Spin up the frontend app using vite
 yarn dev
+
+Docker compose
+docker-compose up --build
+Open the app http://localhost:3001/
+
