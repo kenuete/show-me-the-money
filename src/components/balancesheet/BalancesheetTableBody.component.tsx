@@ -20,7 +20,7 @@ const BalanceSheetTableBody: React.FC<BalanceSheetTableBodyProps> = ({
         return (
           <Row
             id={`balancesheet-data-row-section-${index}`}
-            isHeading={sectionRow.RowType === 'SummaryRow'}
+            highlight={sectionRow.RowType === 'SummaryRow'}
             key={index}
           >
             <Column id={'empty-column'} />

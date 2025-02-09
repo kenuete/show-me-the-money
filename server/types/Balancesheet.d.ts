@@ -22,7 +22,6 @@ export interface Report {
   ReportTitles: string[]
   ReportDate: string
   UpdatedDateUTC: string
-  // Fields: any[]; // Assuming it's an empty array, update if necessary
   Rows: Row[]
 }
 

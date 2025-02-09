@@ -10,7 +10,7 @@ const app = express()
 app.use(express.json())
 app.use('/api/balance-sheet', router)
 
-// Error handling middleware for testing purposes
+// Error handling middleware
 // the last argument is required to make this an error handling middleware
 /* eslint-disable @typescript-eslint/no-unused-vars */
 app.use((err: ErrorWithStatusCode, _req: Request, res: Response, _next: NextFunction) => {

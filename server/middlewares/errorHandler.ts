@@ -1,5 +1,3 @@
-// server/middleware/errorHandler.ts
-
 import { Request, Response, NextFunction } from 'express'
 import { ErrorWithStatusCode } from '../utils/ErrorWithStatusCode.js'
 
@@ -10,7 +8,7 @@ function errorHandler(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _nextFunction: NextFunction
 ) {
-  console.error(err)  // Log the error
+  console.error(err)
 
   const statusCode = err.statusCode || 500
   const message = err.message || 'Internal Server Error'

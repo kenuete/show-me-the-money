@@ -6,6 +6,7 @@ export const TableLayout = styled.table`
   margin-top: 10px;
   border-radius: 10px;
   box-shadow: #00000059 0px 5px 15px;
+  background-color: white;
 `
 
 interface RowLayoutProps {
@@ -13,11 +14,12 @@ interface RowLayoutProps {
   gap?: string
   isHeading?: boolean
   className?: string
+  highlight?: boolean
 }
 
 export const RowLayout = styled.tr.withConfig({
   shouldForwardProp: (prop) =>
-    prop !== 'isHeading' && prop !== 'columnCount' && prop !== 'gap',
+    prop !== 'isHeading' && prop !== 'columnCount' && prop !== 'gap' && prop !== 'highlight',
 })<RowLayoutProps>`
   display: grid;
   grid-template-columns: repeat(
@@ -29,6 +31,10 @@ export const RowLayout = styled.tr.withConfig({
   min-height: 44px;
   font-weight: ${(props: RowLayoutProps) =>
     props.isHeading ? 'bold' : 'normal'};
+  ${({ highlight }) => highlight && `
+    font-weight: bold;
+    background-color: #F5F5F5;
+  `}      
 `
 
 interface ColumnStyleProps {

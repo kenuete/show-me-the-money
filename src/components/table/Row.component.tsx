@@ -8,13 +8,14 @@ interface RowProps {
     isHeading?: boolean
     className?: string
     children?: React.ReactNode
+    highlight?: boolean
 }
 
-const Row: React.FC<RowProps> = ({ id, dataTestId, isHeading, className, children }) => {
+const Row: React.FC<RowProps> = ({ id, dataTestId, isHeading, className, children, highlight }) => {
     const { columnCount, gap } = useContext(TableContext) as TableContextProps
 
     return (
-        <RowLayout id={id} data-testid={dataTestId || id} isHeading={isHeading} columnCount={columnCount} gap={gap} className={className}>
+        <RowLayout id={id} data-testid={dataTestId || id} isHeading={isHeading} columnCount={columnCount} gap={gap} className={className} highlight={highlight}>
             {children}
         </RowLayout>
     )

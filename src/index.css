@@ -25,6 +25,9 @@ a:hover {
 body {
   min-width: 320px;
   min-height: 100vh;
+  border: 1px solid transparent;
+  margin: 0;
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(174,202,223,1) 100%);
 }
 
 h1 {

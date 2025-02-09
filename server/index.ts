@@ -1,4 +1,3 @@
-// server/src/index.ts
 import express, { Request, Response, NextFunction } from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
@@ -20,7 +19,7 @@ app.use('/api/balance-sheet', balanceSheetRoutes)
 // error handler
 app.use(errorHandler)
 
-// 404 Not Found
+// 404
 app.use((_req: Request, _res: Response, nextFunction: NextFunction) => {
   const error: ErrorWithStatusCode = new Error('Not Found')
   error.statusCode = 404

@@ -1,6 +1,6 @@
 import { getReportHeaders, getReportDateRange, getBodyRows } from '../Balancesheet.utils'
 import mockBalanceSheet from './balancesheet.mock.data'
-import { Row } from '../../../types/Balancesheet' // Adjust import as needed
+import { Row } from '../../../types/Balancesheet'
 
 describe('getReportHeaders', () => {
     it('returns the correct headers from the first entry of the balance sheet', () => {
@@ -21,7 +21,7 @@ describe('getReportDateRange', () => {
         const row: Row = {
           RowType: 'Header',
           Title: '',
-          Cells: [], // No valid cells
+          Cells: [],
         }
     
         const { startDate, endDate } = getReportDateRange(row)
@@ -30,7 +30,7 @@ describe('getReportDateRange', () => {
       })
     
       it('returns empty strings if the row is missing entirely', () => {
-        // @ts-expect-error Testing what happens if row is null
+        // @ts-expect-error test if row is null
         const { startDate, endDate } = getReportDateRange(null)
         expect(startDate).toBe('')
         expect(endDate).toBe('')

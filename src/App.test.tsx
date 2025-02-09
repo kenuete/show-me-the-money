@@ -4,7 +4,7 @@ import { getBalancesheetData } from './fetch'
 import balanceSheetData from './components/balancesheet/tests/balancesheet.mock.data'
 import { BalanceSheet } from './types/Balancesheet'
 
-// Mock getBalancesheetData to control its behavior in tests.
+
 jest.mock('./fetch', () => ({
     getBalancesheetData: jest.fn()
 }))
@@ -13,7 +13,6 @@ jest.mock('./components/balancesheet/Balancesheet.component', () => () => (
     <div data-testid="balancesheet">Balancesheet Component</div>
 ))
 
-// Mock the Balancesheet component to prevent rendering its actual implementation.
 jest.mock('./components/balancesheet/Balancesheet.component', () => () => (
     <div data-testid="balancesheet">Balancesheet Component</div>
 ))
