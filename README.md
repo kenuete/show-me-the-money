@@ -20,16 +20,16 @@ Follow these steps if you prefer to run each service manually:
 1. **Clone the repository**  
 
 2. **Install dependencies**  
-   yarn install
+   > yarn install
 
 
 3. **Start the Xero mock API**  
-   docker run -p 3000:3000 jaypeng2015/show-me-the-money
+   > docker run -p 3000:3000 jaypeng2015/show-me-the-money
 
 4. **Start the backend server**  
-   yarn dev:server
+   > yarn dev:server
 
 5. **Start the frontend app**  
-   yarn dev
+   > yarn dev
 
 Now, open [http://localhost:3001/](http://localhost:3001/) in your browser to use the app.
