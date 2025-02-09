@@ -32,4 +32,4 @@ Follow these steps if you prefer to run each service manually:
 5. **Start the frontend app**  
    > yarn dev
 
-Now, open [http://localhost:3001/](http://localhost:3001/) in your browser to use the app.
+Now, open [http://localhost:5173/](http://localhost:5173/) in your browser to use the app.
