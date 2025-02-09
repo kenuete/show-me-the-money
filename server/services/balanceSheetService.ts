@@ -1,6 +1,6 @@
 import axios from 'axios'
 import dotenv from 'dotenv'
-import { BalanceSheet } from '../types/Balancesheet'
+import { BalanceSheet } from '../types/Balancesheet.js'
 dotenv.config()
 
 const XERO_API_URL = process.env.XERO_API_URL || 'http://localhost:3000/api.xro/2.0/Reports/BalanceSheet'

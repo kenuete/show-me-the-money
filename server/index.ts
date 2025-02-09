@@ -2,9 +2,9 @@
 import express, { Request, Response, NextFunction } from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import balanceSheetRoutes from './routes/balanceSheetRoutes'
-import errorHandler from './middlewares/errorHandler'
-import { ErrorWithStatusCode } from './utils/ErrorWithStatusCode'
+import balanceSheetRoutes from './routes/balanceSheetRoutes.js'
+import errorHandler from './middlewares/errorHandler.js'
+import { ErrorWithStatusCode } from './utils/ErrorWithStatusCode.js'
 
 dotenv.config()
 

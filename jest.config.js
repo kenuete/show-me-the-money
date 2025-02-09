@@ -21,13 +21,25 @@ export default {
     {
       // Backend (Express) - using node for Express tests
       displayName: 'backend',
-      preset: 'ts-jest',
+      preset: "ts-jest/presets/default-esm",
       testEnvironment: 'node', // Use Node.js environment for backend tests
       setupFilesAfterEnv: ['./jest.setup.ts'],
+      extensionsToTreatAsEsm: [".ts"],
       transform: {
         '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }],
       },
+      moduleNameMapper: {
+        "^(\\.{1,2}/.*)\\.js$": "$1",
+      },      
       testMatch: ['**/server/**/__tests__/**/*.[jt]s?(x)', '**/server/**/?(*.)+(spec|test).[tj]s?(x)'],
+      testPathIgnorePatterns: [
+        '/node_modules/',
+        '/dist/',
+      ],
+      coveragePathIgnorePatterns: [
+        '/node_modules/',
+        '/dist/',
+      ],
     },
   ],
 }

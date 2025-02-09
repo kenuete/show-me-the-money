@@ -1,5 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express'
-import { getBalanceSheet } from '../services/balanceSheetService'
+import { getBalanceSheet } from '../services/balanceSheetService.js'
 
 const router = express.Router()
 

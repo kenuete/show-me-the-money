@@ -1,7 +1,7 @@
 // server/middleware/errorHandler.ts
 
 import { Request, Response, NextFunction } from 'express'
-import { ErrorWithStatusCode } from '../utils/ErrorWithStatusCode'
+import { ErrorWithStatusCode } from '../utils/ErrorWithStatusCode.js'
 
 function errorHandler(
   err: ErrorWithStatusCode, 
